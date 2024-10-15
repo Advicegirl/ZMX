@@ -10,7 +10,7 @@
 
 ```
   cd Desktop
-  git clone https://github.com/EvelynZhaoZMX/ZMX.git
+  git clone https://github.com/Advicegirl/ZMX.git
   python ZMX/Finder.py
 ```
 **4. Input the path as required**
