@@ -48,7 +48,7 @@ Hackernoon
 TheCoinRepublic
 TheMarketPeriodical.com
 Bitcoinworld
-Bitcoin Insider
+BitcoinInsider
 Techbullion
 coin-update.de
 Trend-online.com
@@ -59,7 +59,11 @@ CoinGape
 forklog.com
 de.cointelegraph.com
 cryptoninjas.net
-'''
+Bitcoinist
+FinanceFeeds
+TheCoinRepublic
+Coinpedia
+EstrategiasdeInversión'''
 
 file_path = input("Input the path of the file: ")
 df = pd.read_excel(file_path)
@@ -97,3 +101,6 @@ print("-"*25, "CHANNELS LEFT BLANK", "-"*25)
 print(final[final["Matched"] == "-"].sort_values("Channels_matched")["Channels_matched"])
 print("-"*25, "CHANNELS LEFT FROM ORIGINAL", "-"*25)
 print(remained["Channels"])
+
+matchedDF.to_excel("matched.xlsx", index=False)
+final.to_excel("matched_final.xlsx", index=False)
