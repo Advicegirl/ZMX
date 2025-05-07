@@ -44,12 +44,10 @@ Valuewalk.com
 Beincrypto
 Coinspeaker
 Hackernoon
-99bitcoins.com/fr
 TheCoinRepublic
 TheMarketPeriodical.com
 Bitcoinworld
 BitcoinInsider
-Techbullion
 coin-update.de
 Trend-online.com
 TheCryptoUpdates
@@ -59,10 +57,7 @@ CoinGape
 forklog.com
 de.cointelegraph.com
 cryptoninjas.net
-Bitcoinist
 FinanceFeeds
-TheCoinRepublic
-Coinpedia
 EstrategiasdeInversión'''
 
 file_path = input("Input the path of the file: ")
@@ -77,8 +72,10 @@ sources = df["Channels"]
 matched = {t : [] for t in targets}
 
 for t in targets:
+  t = re.sub(r"[^a-zA-Z0-9ó]", "", str(t))
   for s in sources:
-    if re.search(t, re.sub(" ", "", str(s)), re.IGNORECASE):
+    parsed = re.sub(r"[^a-zA-Z0-9]", "", str(s))
+    if re.search(t, parsed, re.IGNORECASE):
       matched[t].append(s)
 
 matchedDF = pd.DataFrame()
